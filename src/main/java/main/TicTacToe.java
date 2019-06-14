@@ -8,7 +8,6 @@ public static int[][] ticbox;
 		//check all rows
 		//loop through rows from 0 to 3 and check if all the 3 places have same marks
  		
-		
 		//check all cols
 		//loop through columns from 0 to 3 and check if all the 3 places have same marks
  		
@@ -17,13 +16,43 @@ public static int[][] ticbox;
 		
 		
 		//write your code here !!!
-		
-		
-		
-		return 0;
+		for (int a = 0; a < 8; a++) {
+			String line = null;
+			switch (a) {
+			case 0:
+				line = tic[0][0] +""+ tic[0][1] +""+ tic[0][2];
+				break;
+			case 1:
+				line = tic[1][0] +""+ tic[1][1] +""+ tic[1][2];
+				break;
+			case 2:
+				line = tic[2][0] +""+ tic[2][1] +""+ tic[2][2];
+				break;
+			case 3:
+				line = tic[0][0] +""+ tic[1][1] +""+ tic[2][2];
+				break;
+			case 4:
+				line = tic[0][0] +""+ tic[1][0] +""+ tic[2][0];
+				break;
+			case 5:
+				line = tic[0][1] +""+ tic[1][1] +""+ tic[2][1];
+				break;
+			case 6:
+				line = tic[0][2] +""+ tic[1][2] +""+ tic[2][2];
+				break;
+			case 7:
+				line = tic[2][0] +""+ tic[1][1] +""+ tic[1][0];
+				break;
+			}
+			if (line.equals("111")) {
+				return 1;
+			} else if (line.equals("222")) {
+				return 2;
+			}
 		
 	}
-	
+		return 0;
+	}	
 	public static void printBox(int [][]tic) {
 		for(int i=0;i<3;i++) {
 			for(int j=0;j<3;j++) {
@@ -37,7 +66,14 @@ public static int[][] ticbox;
 		//check if a2 is between 0 & 3
 		//check if the selected box is empty ie, already not marked by other player
 		//if all checks passed return true.
-		
+		if(a1 >= 0 && a1 < 3)
+		{
+			if(a2 >= 0 && a2 < 3)
+			{
+				if(tic[a1][a2]==0)
+					return true;
+			}
+		}
 		
 		//Write your code here !!!
 		
